@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>HIKARI BANK | お客様専用ポータル</title>
+
+  <style>
+    :root {
+      --bg: #071525;
+      --panel: #102439;
+      --line: #294156;
+      --text: #ecf6ff;
+      --muted: #a4bacb;
+      --accent: #70e4df;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont,
+        "Helvetica Neue", sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0b2133;
+      padding: 25px 6%;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      color: var(--accent);
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .demo {
+      color: #e6bd76;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 18px 6%;
+      background: #091a2b;
+    }
+
+    nav a {
+      color: #d0e1ed;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+
+    nav a:hover {
+      background: #173b4b;
+    }
+
+    main {
+      max-width: 1150px;
+      margin: auto;
+      padding: 45px 20px;
+    }
+
+    h1 {
+      font-size: clamp(27px, 5vw, 40px);
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 28px;
+      margin-top: 25px;
+    }
+
+    .balance {
+      background: linear-gradient(120deg, #164550, #102439);
+      border-color: #36706f;
+    }
+
+    .amount {
+      color: var(--accent);
+      font-size: clamp(32px, 6vw, 48px);
+      font-weight: bold;
+      margin: 14px 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service {
+      text-decoration: none;
+      color: white;
+      transition: transform .2s;
+    }
+
+    .service:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+
+    .service-icon {
+      font-size: 30px;
+      color: var(--accent);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 480px;
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      color: var(--muted);
+    }
+
+    th:last-child, td:last-child {
+      text-align: right;
+    }
+
+    .history {
+      overflow-x: auto;
+    }
+
+    .positive {
+      color: var(--accent);
+    }
+
+    button {
+      background: #205159;
+      color: white;
+      border: 1px solid #36706f;
+      padding: 12px 20px;
+      border-radius: 9px;
+      font-size: 15px;
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+      opacity: .65;
+    }
+
+    .warning {
+      background: #392d2040;
+      border: 1px solid #806747;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 35px;
+      color: #f2d49d;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 700px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="brand">HIKARI BANK</div>
+    <div class="demo">CUSTOMER PORTAL | DEMO</div>
+  </header>
+
+  <nav>
+    <a href="#home">ホーム</a>
+    <a href="#balance">残高照会</a>
+    <a href="#history">取引履歴</a>
+    <a href="#transfer">お振込</a>
+  </nav>
+
+  <main id="home">
+
+    <h1>お客様専用ポータル</h1>
+    <p class="muted">
+      HIKARI BANKのオンラインサービスを
+      体験できる公開デモです。
+    </p>
+
+    <section class="card balance" id="balance">
+      <p>普通預金残高（サンプル）</p>
+      <div class="amount">¥1,250,000</div>
+      <p class="muted">
+        デモ口座の架空の残高です。
+      </p>
+    </section>
+
+    <section class="grid">
+
+      <a class="card service" href="#balance">
+        <div class="service-icon">◇</div>
+        <h2>残高照会</h2>
+        <p class="muted">サンプルの預金残高を確認</p>
+      </a>
+
+      <a class="card service" href="#history">
+        <div class="service-icon">▤</div>
+        <h2>取引履歴</h2>
+        <p class="muted">過去のデモ取引を確認</p>
+      </a>
+
+      <a class="card service" href="#transfer">
+        <div class="service-icon">↗</div>
+        <h2>お振込</h2>
+        <p class="muted">現在準備中</p>
+      </a>
+
+    </section>
+
+    <section class="card" id="history">
+
+      <h2>最近のお取引</h2>
+      <p class="muted">すべてサンプルデータです。</p>
+
+      <div class="history">
+        <table>
+          <thead>
+            <tr>
+              <th>日付</th>
+              <th>取引内容</th>
+              <th>金額</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>2026/11/15</td>
+              <td>サンプル入金</td>
+              <td class="positive">+¥120,000</td>
+            </tr>
+
+            <tr>
+              <td>2026/11/12</td>
+              <td>サンプル支払い</td>
+              <td>-¥8,400</td>
+            </tr>
+
+            <tr>
+              <td>2026/11/08</td>
+              <td>サンプル支払い</td>
+              <td>-¥2,600</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+
+    <section class="card" id="transfer">
+
+      <h2>お振込</h2>
+
+      <p class="muted">
+        公開デモのため、
+        実際の振込処理には対応していません。
+      </p>
+
+      <button type="button" disabled>
+        振込を開始（準備中）
+      </button>
+
+    </section>
+
+    <div class="warning">
+      <strong>公開デモに関するご案内</strong>
+      <p>
+        このサイトは学習・作品展示を目的とした
+        デモサイトです。実際の金融サービスではありません。
+        個人情報や口座情報の入力は行わないでください。
+      </p>
+    </div>
+
+  </main>
+
+  <footer>
+    © 2026 HIKARI BANK | EDUCATIONAL DEMO
+  </footer>
+
+</body>
+</html>
